@@ -77,7 +77,7 @@
                                 <ul class="dropdown">
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="{% url 'ssi-store-shop' %}">Shop</a></li>
-                                    <li><a href="{% url 'ssi-store-home' %}">Product Details</a></li>
+                                    <li><a href="">Product Details</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="single-blog.html">Single Blog</a></li>
@@ -207,9 +207,9 @@
         <!-- Single Product Thumb -->
         <div class="single_product_thumb clearfix">
             <div class="product_thumbnail_slides owl-carousel">
-                {% for product in products %}
-                <img src="{{product.images.url}}" alt="">
-                {% endfor %}
+                <img src="{{single_product.images.url}}" alt="">
+                <img src="{{single_product.images.url}}" alt="">
+
             </div>
         </div>
 
@@ -217,10 +217,10 @@
         <div class="single_product_desc clearfix">
             <span>mango</span>
             <a href="cart.html">
-                <h2>One Shoulder Glitter Midi Dress</h2>
+                <h2>{{single_product.product_name}}</h2>
             </a>
-            <p class="product-price"><span class="old-price">$65.00</span> $49.00</p>
-            <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
+            <p class="product-price"><span class="old-price">$65.00</span>₹ {{single_product.price}} </p>
+            <p class="product-desc">{{single_product.description}} </p>
 
             <!-- Form -->
             <form class="cart-form clearfix" method="post">
@@ -316,7 +316,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>ssi-store-home
 
 <div class="row mt-5">
                 <div class="col-md-12 text-center">

@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from store.views import store_home,shop
+from store.views import product_detail,shop,store_home
 
 urlpatterns = [
     path("",shop,name="ssi-store-shop"),
     path("product_details",store_home,name="ssi-store-home"),
     path('<slug:category_slug>', shop, name='ssi-store-shop'),
-    
+    path('<slug:category_slug>/<slug:product_slug>', product_detail, name='ssi-store-home'),
     # path("about",about,name="ssi-about"),
     # path("checkout",checkout,name="ssi-checkout")
 ]

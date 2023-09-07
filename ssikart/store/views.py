@@ -29,3 +29,13 @@ def shop(request,category_slug=None):
         "products_count":products_count
        }
       return render(request,"store/shop.html",context_data)
+
+def product_detail(request, category_slug=None, product_slug=None):
+        try:
+         single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+        except Exception as e:
+          raise e
+        context_data = {
+      'single_product' : single_product,
+        }
+        return render(request,"store/product_details.html",context_data)

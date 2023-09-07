@@ -394,7 +394,7 @@
                                     <!-- Product Description -->
                                     <div class="product-description">
                                         <span>topshop</span>
-                                        <a href="single-product-details.html">
+                                        <a href="{% url 'ssi-store-home' product.category.slug product.slug %}">
                                             <h6>{{product.product_name}}</h6>
                                         </a>
                                         <p class="product-price"><span class="old-price">$75.00</span> ${{product.price}}</p>
